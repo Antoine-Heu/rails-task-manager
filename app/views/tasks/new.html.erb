@@ -1,0 +1,10 @@
+<%= link_to "Home",
+tasks_path(@task) %>
+<h2>Create a new task</h2>
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h2>There are my tasks:</h2>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.title, task_path(task) %></li>
+    <%= link_to update_task_path(task), data: {turbo_method: :patch} do %>
+      <%= form_with model: task do |f| %>
+        <%= f.check_box :completed %>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
